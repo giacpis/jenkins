@@ -12,7 +12,7 @@ pipeline {
         stage('deploy-cf') {
             steps {
                 sh 'aws s3 ls'
-                sh 'aws cp /tmp/code-repo/cloudformation s3://cf-templates-tfbv34rj6yo6-eu-west-1/jenkins/cloudformation'
+                sh 'aws s3 cp /tmp/code-repo/cloudformation s3://cf-templates-tfbv34rj6yo6-eu-west-1/jenkins/cloudformation'
             }
         }
     }
