@@ -6,5 +6,10 @@ pipeline {
                 sh 'python --version'
             }
         }
+        stage('mammeta') {
+            steps {
+                sh 'aws s3 list'
+            }
+        }
     }
 }
