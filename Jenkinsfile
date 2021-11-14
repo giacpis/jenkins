@@ -8,7 +8,7 @@ pipeline {
         }
         stage('mammeta') {
             steps {
-                sh 'aws s3 list'
+                sh 'aws s3 ls'
             }
         }
     }
