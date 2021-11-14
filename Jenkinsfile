@@ -11,7 +11,8 @@ pipeline {
         stage('deploy-cf') {
             steps {
                 sh 'aws s3 ls'
-                sh 'aws s3 cp /tmp/code-repo/cloudformation s3://cf-templates-tfbv34rj6yo6-eu-west-1/jenkins/cloudformation'
+                sh 'aws s3 cp /tmp/code-repo/cloudformation s3://cf-templates-tfbv34rj6yo6-eu-west-1/jenkins/cloudformation.yml'
+                sh 'aws cloudformation create-stack --stack-name Stack2 --template-body s3://cf-templates-tfbv34rj6yo6-eu-west-1/jenkins/cloudformation.yml'
             }
         }
     }
