@@ -1,13 +1,12 @@
 pipeline {
-    //agent { docker { image 'python:3.5.1' } }
     agent any
     stages {
-        stage('build') {
+        stage('retrieve-file') {
             steps {
                 sh 'python --version'
             }
         }
-        stage('mammeta') {
+        stage('deploy-cf') {
             steps {
                 sh 'aws s3 ls'
             }
